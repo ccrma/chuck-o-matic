@@ -3,8 +3,9 @@
 # name: autoversion.sh
 # desc: update version number in chuck, miniAudicle, chugins
 #
-# usage: sh ./scripts/autoversion.sh <new-version-string>
-
+# usage: from chuck-o-matic/ root
+#      > sh ./scripts/autoversion.sh
+#      > sh ./scripts/autoversion.sh <new-version-string>
 
 # version number
 VERSION_NUMBER=${1}
@@ -12,9 +13,10 @@ VERSION_NUMBER=${1}
 # version name
 VERSION_NAME="chai"
 
-# prompt for version number if none provided
+# check if version number empty
 while [ -z "${VERSION_NUMBER}" ]
 do
+    # prompt for version number
     read -p "version number: " VERSION_NUMBER
 done
 

@@ -1,0 +1,9 @@
+[submodule "src/chuck"]
+	path = src/chuck
+	url = https://github.com/ccrma/chuck.git
+[submodule "src/miniAudicle"]
+	path = src/miniAudicle
+	url = https://github.com/ccrma/miniAudicle.git
+[submodule "src/chugins"]
+	path = src/chugins
+	url = https://github.com/ccrma/chugins.git

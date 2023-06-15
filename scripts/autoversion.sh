@@ -47,7 +47,7 @@ fi
 # make sure the submodules are init and updated
 echo "updating submodules..."
 git submodule init
-git submodule update --recursive
+git submodule update --recursive --remote
 
 echo "updating version string in ./src/chuck/src/core/chuck.h..."
 sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                \"$VERSION_NUMBER ($VERSION_NAME)\"/g${SED_POST}" ./src/chuck/src/core/chuck.h

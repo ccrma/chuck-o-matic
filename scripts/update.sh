@@ -9,4 +9,4 @@
 # make sure the submodules are init and updated
 echo "updating submodules..."
 git submodule init
-git submodule update --recursive
+git submodule update --recursive --remote

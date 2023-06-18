@@ -19,6 +19,10 @@ WRITE_MODE=
 # backup file extension
 BACKUP_EXT=.bak
 
+# files
+FILE_CHUCK_H=../chuck/src/core/chuck.h
+FILE_MA_VERSION_H=../miniAudicle/src/version.h
+FILE_MA_VERSION_MK=../miniAudicle/src/version.mk
 
 # check if version number empty
 while [ -z "${VERSION_NUMBER}" ]
@@ -45,24 +49,24 @@ else
 fi
 
 # make sure the submodules are init and updated
-echo "updating submodules..."
-git submodule init
-git submodule update --recursive --remote
+# echo "updating submodules..."
+# git submodule init
+# git submodule update --recursive --remote
 
-echo "updating version string in ./src/chuck/src/core/chuck.h..."
-sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                \"$VERSION_NUMBER ($VERSION_NAME)\"/g${SED_POST}" ./src/chuck/src/core/chuck.h
+echo "updating version string in "${FILE_CHUCK_H}"..."
+sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                \"$VERSION_NUMBER ($VERSION_NAME)\"/g${SED_POST}" ${FILE_CHUCK_H}
 
-echo "updating version string in ./src/miniAudicle/src/verison.h..."
-sed ${SED_FLAGS} "s/#define ENV_MA_VERSION.*/#define ENV_MA_VERSION \"${VERSION_NUMBER}\"/g${SED_POST}" ./src/miniAudicle/src/version.h
+echo "updating version string in "${FILE_MA_VERSION_H}"..."
+sed ${SED_FLAGS} "s/#define ENV_MA_VERSION.*/#define ENV_MA_VERSION \"${VERSION_NUMBER}\"/g${SED_POST}" ${FILE_MA_VERSION_H}
 
-echo "updating version string in ./src/miniAudicle/src/verison.mk..."
-sed ${SED_FLAGS} "s/VERSION.*/VERSION?=${VERSION_NUMBER}/g${SED_POST}" ./src/miniAudicle/src/version.mk
+echo "updating version string in "${FILE_MA_VERSION_MK}"..."
+sed ${SED_FLAGS} "s/VERSION.*/VERSION?=${VERSION_NUMBER}/g${SED_POST}" ${FILE_MA_VERSION_MK}
 
 # test which mode
 if [[ ${WRITE_MODE:0:1} == "y" ]]
 then
 	echo "removing backup files..."
-	rm -f ./src/chuck/src/core/chuck.h${BACKUP_EXT}
-	rm -f ./src/miniAudicle/src/version.h${BACKUP_EXT}
-	rm -f ./src/miniAudicle/src/version.mk${BACKUP_EXT}
+	rm -f ${FILE_CHUCK_H}${BACKUP_EXT}
+	rm -f ${FILE_MA_VERSION_H}${BACKUP_EXT}
+	rm -f ${FILE_MA_VERSION_MK}{BACKUP_EXT}
 fi

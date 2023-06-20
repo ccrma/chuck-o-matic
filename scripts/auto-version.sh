@@ -21,6 +21,7 @@ BACKUP_EXT=.bak
 
 # files
 FILE_CHUCK_H=../chuck/src/core/chuck.h
+FILE_CHUCK_MAKEFILE=../chuck/src/makefile
 FILE_MA_VERSION_H=../miniAudicle/src/version.h
 FILE_MA_VERSION_MK=../miniAudicle/src/version.mk
 
@@ -54,7 +55,10 @@ fi
 # git submodule update --recursive --remote
 
 echo "updating version string in "${FILE_CHUCK_H}"..."
-sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                \"$VERSION_NUMBER ($VERSION_NAME)\"/g${SED_POST}" ${FILE_CHUCK_H}
+sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                \"${VERSION_NUMBER} (${VERSION_NAME})\"/g${SED_POST}" ${FILE_CHUCK_H}
+
+echo "updating version string in "${FILE_CHUCK_MAKEFILE}"..."
+sed ${SED_FLAGS} "s/CK_VERSION=.*/CK_VERSION=${VERSION_NUMBER}/g${SED_POST}" ${FILE_CHUCK_MAKEFILE}
 
 echo "updating version string in "${FILE_MA_VERSION_H}"..."
 sed ${SED_FLAGS} "s/#define ENV_MA_VERSION.*/#define ENV_MA_VERSION \"${VERSION_NUMBER}\"/g${SED_POST}" ${FILE_MA_VERSION_H}
@@ -67,6 +71,7 @@ if [[ ${WRITE_MODE:0:1} == "y" ]]
 then
 	echo "removing backup files..."
 	rm -f ${FILE_CHUCK_H}${BACKUP_EXT}
+    rm -f ${FILE_CHUCK_MAKEFILE}${BACKUP_EXT}
 	rm -f ${FILE_MA_VERSION_H}${BACKUP_EXT}
 	rm -f ${FILE_MA_VERSION_MK}{BACKUP_EXT}
 fi

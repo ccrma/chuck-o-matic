@@ -10,12 +10,12 @@
 # print
 echo "changing directory: ../chuck/"
 # go into chuck repo
-pushd ../chuck/ > null
+pushd ../chuck/ > /dev/null
 # print
 echo "cleaning generated source distribution..."
 # make the target
 make --just-print -f src/makefile clean
 # come back
-popd > null
+popd > /dev/null
 # print
 echo "coming back to where we started..."

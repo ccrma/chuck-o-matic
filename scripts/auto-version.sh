@@ -71,7 +71,7 @@ if [[ ${WRITE_MODE:0:1} == "y" ]]
 then
 	echo "removing backup files..."
 	rm -f ${FILE_CHUCK_H}${BACKUP_EXT}
-    rm -f ${FILE_CHUCK_MAKEFILE}${BACKUP_EXT}
+	rm -f ${FILE_CHUCK_MAKEFILE}${BACKUP_EXT}
 	rm -f ${FILE_MA_VERSION_H}${BACKUP_EXT}
-	rm -f ${FILE_MA_VERSION_MK}{BACKUP_EXT}
+	rm -f ${FILE_MA_VERSION_MK}${BACKUP_EXT}
 fi

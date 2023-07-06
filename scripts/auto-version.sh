@@ -38,7 +38,7 @@ read -p "modify files? [y/(n)]: " WRITE_MODE
 # test which mode
 if [[ ${WRITE_MODE:0:1} == "y" ]]
 then
-	echo "WRITING mode (files modified)..."
+    echo "WRITING mode (files modified)..."
     # write to file
     SED_FLAGS="-i${BACKUP_EXT}"
     SED_POST=
@@ -69,9 +69,9 @@ sed ${SED_FLAGS} "s/VERSION.*/VERSION?=${VERSION_NUMBER}/g${SED_POST}" ${FILE_MA
 # test which mode
 if [[ ${WRITE_MODE:0:1} == "y" ]]
 then
-	echo "removing backup files..."
-	rm -f ${FILE_CHUCK_H}${BACKUP_EXT}
-	rm -f ${FILE_CHUCK_MAKEFILE}${BACKUP_EXT}
-	rm -f ${FILE_MA_VERSION_H}${BACKUP_EXT}
-	rm -f ${FILE_MA_VERSION_MK}${BACKUP_EXT}
+    echo "removing backup files..."
+    rm -f ${FILE_CHUCK_H}${BACKUP_EXT}
+    rm -f ${FILE_CHUCK_MAKEFILE}${BACKUP_EXT}
+    rm -f ${FILE_MA_VERSION_H}${BACKUP_EXT}
+    rm -f ${FILE_MA_VERSION_MK}${BACKUP_EXT}
 fi

@@ -6,15 +6,17 @@
 # usage: from chuck-o-matic/ root
 #      > sh ./scripts/ck-distclean.sh
 
+# base chuck directory
+CHUCK_DIR=../chuck
 
 # print
-echo "changing directory: ../chuck/"
+echo "changing directory: "${CHUCK_DIR}"/src"
 # go into chuck repo
-pushd ../chuck/ > /dev/null
+pushd ${CHUCK_DIR}/src/ > /dev/null
 # print
 echo "cleaning generated source distribution..."
 # make the target
-make --just-print -f src/makefile clean
+make clean
 # come back
 popd > /dev/null
 # print

@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# name: ck-distclean.sh
-# desc: clean src distribution
+# name: ck-clean.sh
+# desc: make clean in chuck, including removing src distribution
 #
 # usage: from chuck-o-matic/ root
-#      > sh ./scripts/ck-distclean.sh
+#      > sh ./scripts/ck-clean.sh
 
 # base chuck directory
 CHUCK_DIR=../chuck

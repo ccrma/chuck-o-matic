@@ -15,7 +15,3 @@ CHUGINS_DIR="../chugins"
 echo "copying headers to chugins/chuck/include"
 # copy to chugins/chuck/include
 cp -fv ${CHUCK_DIR}/src/core/*.h ${CHUGINS_DIR}/chuck/include/
-# echo
-echo "(also copying headers to chuginate template...)"
-# copy to template
-cp -f ${CHUCK_DIR}/src/core/*.h ${CHUGINS_DIR}/chuginate/template/chuck/include/

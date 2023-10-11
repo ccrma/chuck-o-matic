@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# name: chug-update-headers.sh
+# name: chugins-update-headers.sh
 # desc: copy chuck headers to chugins
 #
 # usage: from chuck-o-matic/ root
-#      > sh ./scripts/chug-update-headers.sh
+#      > sh ./scripts/chugins-update-headers.sh
 
 # base chuck directory
 CHUCK_DIR=../chuck

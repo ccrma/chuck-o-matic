@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 # name: chugl-update-headers.sh
-# desc: copy chuck headers to chugins
+# desc: copy chugl examples headers to website (and other places)
 #
 # usage: from chuck-o-matic/ root
-#      > sh ./scripts/chug-update-headers.sh
+#      > sh ./scripts/chugl-update-examples.sh
 
 # base chugl directory
 CHUGL_DIR="../chugl"

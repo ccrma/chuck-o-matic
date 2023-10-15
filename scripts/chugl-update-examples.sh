@@ -13,5 +13,5 @@ CHUCK_WEBDIR=../chuck-website
 
 # print
 echo "copying file to chuck-website/chugl/examples"
-# copy to chugins/chuck/include
+# copy
 cp -rfv ${CHUGL_DIR}/examples/* ${CHUCK_WEBDIR}/chugl/examples/

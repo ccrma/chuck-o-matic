@@ -1,7 +1,9 @@
 #!/bin/bash
 #
 # name: chugins-update-headers.sh
-# desc: copy chuck headers to chugins
+# desc: copy chuck headers to chugins (deprecated)
+#       NOTE: chugins have moved to using a single generated header...
+#       see chugins-gen-header.sh for more information
 #
 # usage: from chuck-o-matic/ root
 #      > sh ./scripts/chugins-update-headers.sh

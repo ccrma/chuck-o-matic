@@ -21,6 +21,7 @@ echo "generating a single header: '${CHUGIN_H}'"
 
 # generate from four minimal chuck headers; omit #include for chuck headers
 awk '!/#include "chuck_/ {print}' \
+    src/chugin-preamble.h \
     ${CHUCK_DIR}/chuck_def.h \
     ${CHUCK_DIR}/chuck_symbol.h \
     ${CHUCK_DIR}/chuck_absyn.h \

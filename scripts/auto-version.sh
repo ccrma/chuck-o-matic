@@ -20,7 +20,7 @@ WRITE_MODE=
 BACKUP_EXT=.bak
 
 # files
-FILE_CHUCK_H=../chuck/src/core/chuck.h
+FILE_CHUCK_H=../chuck/src/core/chuck_def.h
 FILE_CHUCK_MAKEFILE=../chuck/src/makefile
 FILE_MA_VERSION_H=../miniAudicle/src/version.h
 FILE_MA_VERSION_MK=../miniAudicle/src/version.mk

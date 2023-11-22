@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# name: chugins-get-header.sh
-# desc: generate a single chugin.h header & copy to chugins and chugl
+# name: chugins-gen-header.sh
+# desc: generate a single chugin.h header & distrbute to repos
 #
 # usage: from chuck-o-matic/ root
 #      > sh ./scripts/chugins-gen-header.sh
@@ -12,9 +12,11 @@ CHUCK_DIR=../chuck/src/core
 CHUGIN_H=chugin.h
 
 # base chugins directory
-CHUGINS_DIR="../chugins"
+CHUGINS_DIR="../chugins/chuck/include/"
+# chuck headers repo
+CHEADERS_DIR="../cheaders/include/"
 # base chugl directory
-CHUGL_DIR="../chugl"
+CHUGL_DIR="../chugl/src/chuck/include/"
 
 # print what we are doing
 echo "generating a single header: '${CHUGIN_H}'"
@@ -28,17 +30,19 @@ awk '!/#include "chuck_/ {print}' \
     ${CHUCK_DIR}/chuck_dl.h \
     > ${CHUGIN_H}
 
-# print
-echo "copying '${CHUGIN_H}' to ${CHUGINS_DIR}/chuck/include..."
-# copy
-cp -fv ${CHUGIN_H} ${CHUGINS_DIR}/chuck/include/
+# print and copy
+echo "copying '${CHUGIN_H}' to ${CHUGINS_DIR}..."
+cp -fv ${CHUGIN_H} ${CHUGINS_DIR}
 
-# print
-echo "copying '${CHUGIN_H}' to ${CHUGL_DIR}/src/chuck/include..."
-# copy
-cp -fv ${CHUGIN_H} ${CHUGL_DIR}/src/chuck/include/
+# print and copy
+echo "copying '${CHUGIN_H}' to ${CHUGL_DIR}..."
+cp -fv ${CHUGIN_H} ${CHUGL_DIR}
 
-# print
+# print and copy
+echo "copying '${CHUGIN_H}' to ${CHEADERS_DIR}..."
+cp -fv ${CHUGIN_H} ${CHEADERS_DIR}
+
+# print and copy
 echo "removing '${CHUGIN_H}'..."
 # remove
 rm -f ${CHUGIN_H}

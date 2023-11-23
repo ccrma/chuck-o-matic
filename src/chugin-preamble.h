@@ -26,12 +26,16 @@
 // file: chugin.h
 // desc: unified header for creating chugins, including the following
 //
-//   * chuck c++ typedefs and #defines such as t_CKFLOAT
-//   * macros for defining chugin methods
-//   * chugin DL query API to interface with chuck type system
-//   * chugin runtime DL API to access host functionality
+//   * chuck c++ typedefs and #defines such as t_CKINT, t_CKFLOAT, etc.
+//   * macros for chugin components, e.g., member/static variables & functions,
+//     contructors, destructors, and operator overloads
+//   * chugin DL query API for adding new types to the ChucK type system
+//   * chugin DL runtime API for accessing host functionalities across
+//     shared-library boundaries
 //   * header version string CHUCK_VERSION_STRING
+//     (associated with a particular chuck language version)
 //   * host/chugin compatibility version
+//     (used when a chugin loads to determine chugin:host compatibility)
 //
 // NOTE: please see the chugins page and the chugins repository for examples
 //       https://chuck.stanford.edu/extend/

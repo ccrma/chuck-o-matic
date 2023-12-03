@@ -55,7 +55,7 @@ fi
 # git submodule update --recursive --remote
 
 echo "updating version string in "${FILE_CHUCK_H}"..."
-sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING                    \"${VERSION_NUMBER} (${VERSION_NAME})\"/g${SED_POST}" ${FILE_CHUCK_H}
+sed ${SED_FLAGS} "s/#define CHUCK_VERSION_STRING.*/#define CHUCK_VERSION_STRING        \"${VERSION_NUMBER} (${VERSION_NAME})\"/g${SED_POST}" ${FILE_CHUCK_H}
 
 echo "updating version string in "${FILE_CHUCK_MAKEFILE}"..."
 sed ${SED_FLAGS} "s/CK_VERSION=.*/CK_VERSION=${VERSION_NUMBER}/g${SED_POST}" ${FILE_CHUCK_MAKEFILE}

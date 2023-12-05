@@ -59,4 +59,9 @@
 #define __CHUCK_CHUGIN__
 #endif // #ifndef __CHUCK_CHUGIN__
 
+// use CHUGIN_API_VERSION_MAJOR for chugin API major version (as an integer)
+#define CHUGIN_API_VERSION_MAJOR CK_DLL_VERSION_MAJOR
+// use CHUGIN_API_VERSION_MINOR for chugin API minor version (as an integer)
+#define CHUGIN_API_VERSION_MINOR CK_DLL_VERSION_MINOR
+
 

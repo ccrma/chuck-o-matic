@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # name: chugins-gen-header.sh
-# desc: generate a single chugin.h header & distrbute to repos
+# desc: generate a single chugin.h header & copy to various repos
 #
 # usage: from chuck-o-matic/ root
 #      > sh ./scripts/chugins-gen-header.sh

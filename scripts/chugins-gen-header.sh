@@ -16,7 +16,7 @@ CHUGINS_DIR="../chugins/chuck/include/"
 # chuck headers repo
 CHEADERS_DIR="../cheaders/include/"
 # base chugl directory
-CHUGL_DIR="../chugl/src/chuck/include/"
+CHUGL_DIR="../chugl/src/vendor/chuck/"
 
 # print what we are doing
 echo "generating a single header: '${CHUGIN_H}'"
